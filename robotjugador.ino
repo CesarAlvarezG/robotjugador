@@ -1,12 +1,22 @@
+#include<Servo.h>//Libreria para manejo de los servos
+
+#define PINSERVODERECHO 12//Defino el pin del servo derecho
+
+Servo motorDerecho;
+
 
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  motorDerecho.attach(PINSERVODERECHO);
 }
 
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
+  motorDerecho.write(0);//Sentido horario
+  delay(1000);
+  motorDerecho.write(90);//Detenido
+  delay(1000);
+  motorDerecho.write(180);//Sentido antihorario
+  delay(1000);
+  motorDerecho.write(90);//Detenido
+  delay(1000);
+  
 }
